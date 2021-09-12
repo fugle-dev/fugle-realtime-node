@@ -1,6 +1,6 @@
 import * as WebSocket from 'isomorphic-ws';
 import { stringify } from 'query-string';
-import { ClientConfig } from '../interfaces';
+import { ClientConfig } from '../../interfaces';
 
 export class Intraday {
   constructor(private readonly config: ClientConfig) {}

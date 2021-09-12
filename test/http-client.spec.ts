@@ -1,6 +1,6 @@
 import * as fetch from 'isomorphic-fetch';
 import { HttpClient } from '../src';
-import { Intraday } from '../src/http/intraday';
+import { Intraday } from '../src/clients/http-client/intraday';
 
 jest.mock('isomorphic-fetch', () => jest.fn(() => Promise.resolve({ json: () => Promise.resolve({}) })));
 

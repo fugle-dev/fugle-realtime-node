@@ -1,6 +1,6 @@
 import * as WebSocket from 'isomorphic-ws';
 import { WebSocketClient } from '../src';
-import { Intraday } from '../src/websocket/intraday';
+import { Intraday } from '../src/clients/websocket-client/intraday';
 
 jest.mock('isomorphic-ws');
 
