@@ -28,12 +28,15 @@
   "homepage": "https://github.com/fugle-dev/fugle-realtime-node#readme",
   "dependencies": {
     "isomorphic-fetch": "^3.0.0",
-    "query-string": "^7.0.1"
+    "isomorphic-ws": "^4.0.1",
+    "query-string": "^7.0.1",
+    "ws": "^8.2.2"
   },
   "devDependencies": {
     "@types/isomorphic-fetch": "^0.0.35",
     "@types/jest": "^27.0.1",
     "@types/node": "^16.9.1",
+    "@types/ws": "^7.4.7",
     "@typescript-eslint/eslint-plugin": "^4.31.0",
     "@typescript-eslint/parser": "^4.31.0",
     "eslint": "^7.32.0",
