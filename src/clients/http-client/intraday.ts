@@ -1,44 +1,31 @@
 import * as fetch from 'isomorphic-fetch';
-import { stringify } from 'query-string';
+import { compileUrl } from '../../utils';
 import { ClientConfig } from '../../interfaces';
 
 export class Intraday {
   constructor(private readonly config: ClientConfig) {}
 
   public meta(params: { symbolId: string, oddLot?: boolean }): Promise<any> {
-    return this.makeRequest(this.compileUrl('/intraday/meta', params));
+    return this.makeRequest(compileUrl('/intraday/meta', params, this.config));
   }
 
   public quote(params: { symbolId: string, oddLot?: boolean }): Promise<any> {
-    return this.makeRequest(this.compileUrl('/intraday/quote', params));
+    return this.makeRequest(compileUrl('/intraday/quote', params, this.config));
   }
 
   public chart(params: { symbolId: string, oddLot?: boolean }): Promise<any> {
-    return this.makeRequest(this.compileUrl('/intraday/chart', params));
+    return this.makeRequest(compileUrl('/intraday/chart', params, this.config));
   }
 
   public dealts(params: { symbolId: string, oddLot?: boolean, offset?: number, limit?: number }): Promise<any> {
-    return this.makeRequest(this.compileUrl('/intraday/dealts', params));
+    return this.makeRequest(compileUrl('/intraday/dealts', params, this.config));
   }
 
   public volumes(params: { symbolId: string, oddLot?: boolean }): Promise<any> {
-    return this.makeRequest(this.compileUrl('/intraday/volumes', params));
+    return this.makeRequest(compileUrl('/intraday/volumes', params, this.config));
   }
 
   private makeRequest(url: string): Promise<any> {
     return fetch(url).then(res => res.json());
-  }
-
-  private compileUrl(path: string, params: any): string {
-    params = { ...params, apiToken: this.config.apiToken };
-
-    const baseUrl = `${this.config.url}/${this.config.apiVersion}`;
-
-    /* istanbul ignore next */
-    const endpoint = (path.indexOf('/') === 0) ? path : '/' + path;
-
-    const query = '?' + stringify(params);
-
-    return baseUrl + endpoint + query;
   }
 }
