@@ -1,5 +1,5 @@
 {
-  "name": "fugle-realtime-node",
+  "name": "@fugle/realtime",
   "version": "0.0.0",
   "description": "Fugle Realtime API client library for Node.js",
   "main": "lib/index.js",
