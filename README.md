@@ -1,7 +1,7 @@
 # Fugle Realtime
 
 [![NPM version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
+[![Build Status][circleci-image]][circleci-url]
 [![Coverage Status][codecov-image]][codecov-url]
 
 > Fugle Realtime API client library for Node.js
@@ -98,7 +98,7 @@ client.instraday.chart({ symbolId: '2884' })
 
 [npm-image]: https://img.shields.io/npm/v/@fugle/realtime.svg
 [npm-url]: https://npmjs.com/package/@fugle/realtime
-[travis-image]: https://img.shields.io/travis/fugle-dev/fugle-realtime-node.svg
-[travis-url]: https://travis-ci.org/fugle-dev/fugle-realtime-node
+[circleci-image]: https://img.shields.io/circleci/build/github/fugle-dev/fugle-realtime-node
+[circleci-url]: https://circleci.com/gh/fugle-dev/fugle-realtime-node
 [codecov-image]: https://img.shields.io/codecov/c/github/fugle-dev/fugle-realtime-node.svg
 [codecov-url]: https://codecov.io/gh/fugle-dev/fugle-realtime-node
