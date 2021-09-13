@@ -1,7 +1,7 @@
 import { stringify } from 'query-string';
 import { ClientConfig } from '../interfaces';
 
-export function compileUrl(path: string, params: any, config: ClientConfig) {
+export function compileUrl(path: string, params: any, config: ClientConfig): string {
   params = { ...params, apiToken: config.apiToken };
 
   const baseUrl = `${config.url}/${config.apiVersion}`;
