@@ -27,35 +27,35 @@ const client = new HttpClient({ apiToken: 'demo' });
 #### intraday.meta
 
 ```js
-client.instraday.meta({ symbolId: '2884' })
+client.intraday.meta({ symbolId: '2884' })
   .then(data => console.log(data));
 ```
 
 #### intraday.quote
 
 ```js
-client.instraday.quote({ symbolId: '2884' })
+client.intraday.quote({ symbolId: '2884' })
   .then(data => console.log(data));
 ```
 
 #### intraday.chart
 
 ```js
-client.instraday.chart({ symbolId: '2884' })
+client.intraday.chart({ symbolId: '2884' })
   .then(data => console.log(data));
 ```
 
 #### intraday.dealts
 
 ```js
-client.instraday.dealts({ symbolId: '2884', limit: 50 })
+client.intraday.dealts({ symbolId: '2884', limit: 50 })
   .then(data => console.log(data));
 ```
 
 #### intraday.volumes
 
 ```js
-client.instraday.volumes({ symbolId: '2884' })
+client.intraday.volumes({ symbolId: '2884' })
   .then(data => console.log(data));
 ```
 
@@ -70,21 +70,21 @@ const client = new WebSocketClient({ apiToken: 'demo' });
 #### intraday.meta
 
 ```js
-client.instraday.meta({ symbolId: '2884' })
+client.intraday.meta({ symbolId: '2884' })
   .onmessage = message => console.log(JSON.parse(message.data));
 ```
 
 #### intraday.quote
 
 ```js
-client.instraday.quote({ symbolId: '2884' })
+client.intraday.quote({ symbolId: '2884' })
   .onmessage = message => console.log(JSON.parse(message.data));
 ```
 
 #### intraday.chart
 
 ```js
-client.instraday.chart({ symbolId: '2884' })
+client.intraday.chart({ symbolId: '2884' })
   .onmessage = message => console.log(JSON.parse(message.data));
 ```
 
