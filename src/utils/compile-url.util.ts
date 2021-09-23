@@ -7,7 +7,7 @@ export function compileUrl(path: string, params: any, config: ClientConfig): str
   const baseUrl = `${config.url}/${config.apiVersion}`;
 
   /* istanbul ignore next */
-  const endpoint = (path.indexOf('/') === 0) ? path : '/' + path;
+  const endpoint = path.startsWith('/') ? path : '/' + path;
 
   const query = '?' + stringify(params);
 
