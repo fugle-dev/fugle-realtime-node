@@ -59,10 +59,10 @@ client.intraday.volumes({ symbolId: '2884' })
   .then(data => console.log(data));
 ```
 
-#### marketdata.candles
+#### historical.candles
 
 ```js
-client.marketdata.candles({ symbolId: '2884', from: '2022-02-07', to: '2022-02-11' })
+client.historical.candles({ symbolId: '2884', from: '2022-02-07', to: '2022-02-11' })
   .then(data => console.log(data));
 ``` 
 
