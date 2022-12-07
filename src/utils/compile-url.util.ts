@@ -1,10 +1,11 @@
+import { join } from 'path';
 import { stringify } from 'query-string';
 import { ClientConfig } from '../interfaces';
 
-export function compileUrl(path: string, params: any, config: ClientConfig): string {
+export function compileUrl(source: string, path: string, params: any, config: ClientConfig): string {
   params = { ...params, apiToken: config.apiToken };
 
-  const baseUrl = `${config.url}/${config.apiVersion}`;
+  const baseUrl = new URL(join(source, config.apiVersion), config.url).href;
 
   /* istanbul ignore next */
   const endpoint = path.startsWith('/') ? path : '/' + path;
