@@ -1,7 +1,7 @@
 import { compileUrl, makeRequest } from '../../utils';
 import { ClientConfig } from '../../interfaces';
 
-export class MarketData {
+export class Historical {
   constructor(private readonly config: ClientConfig) {}
 
   public candles(params: { symbolId: string, from?: string, to?: string, fields?: string }): Promise<any> {
