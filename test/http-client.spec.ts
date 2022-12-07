@@ -1,6 +1,7 @@
 import * as fetch from 'isomorphic-fetch';
 import { HttpClient } from '../src';
 import { Intraday } from '../src/clients/http-client/intraday';
+import { Historical } from '../src/clients/http-client/historical';
 
 jest.mock('isomorphic-fetch', () => jest.fn(() => Promise.resolve({ json: () => Promise.resolve({}) })));
 
@@ -87,4 +88,21 @@ describe('HttpClient', () => {
       expect(fetch).toBeCalledWith('https://api.fugle.tw/realtime/v0.3/intraday/volumes?apiToken=demo&symbolId=2884');
     });
   });
+
+  describe('historical', () => {
+    it('should get marketdata instance', () => {
+      const client = new HttpClient();
+      expect(client.historical).toBeInstanceOf(Historical);
+    });
+  });
+
+  describe('historical.candles()', () => {
+    it('should invoke fetch with compiled url', async () => {
+      const client = new HttpClient();
+      await client.historical.candles({ symbolId: '2884', from:'2022-02-07', to:'2022-02-11', fields: 'open,high,low,close,volume,turnover,change' });
+      expect(fetch).toBeCalledWith('https://api.fugle.tw/marketdata/v0.3/candles?apiToken=demo&fields=open%2Chigh%2Clow%2Cclose%2Cvolume%2Cturnover%2Cchange&from=2022-02-07&symbolId=2884&to=2022-02-11');
+    });
+  });
 });
+
+
